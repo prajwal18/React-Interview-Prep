@@ -5,10 +5,22 @@
 import React, { useState } from 'react';
 
 const Question7 = () => {
-    const [name, setName] = useState("");
-    const [age, setAge] = useState(0);
-    const [details, setDetails] = useState("");
-    const [dob, setDob] = useState(null);
+    const [objData, setObjData] = useState({
+        name: '',
+        age: 0,
+        details: '',
+        dob: ''
+    });
+
+    const updateObjData = (name) => (value) => {
+        setObjData(objData => ({ ...objData, [name]: value }));
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        alert(`Hello ${objData.name} you are just awesome.`)
+    }
+
     return (
         <div>
             <h3>Forms in react, General Details</h3>
@@ -20,42 +32,39 @@ const Question7 = () => {
                     maxWidth: "500px",
                     padding: "10px"
                 }}
-                onSubmit={(e) => {
-                    e.preventDefault();
-                    alert("Good job");
-                }}
+                onSubmit={handleSubmit}
             >
                 <input
                     placeholder='Name'
-                    value={name}
+                    value={objData.name}
                     onChange={(e) => {
-                        setName(e.target.value);
+                        updateObjData("name")(e.target.value);
                     }}
                 />
 
                 <input
                     placeholder='Age'
-                    type="numbers"
-                    value={age}
+                    type="number"
+                    value={objData.age}
                     onChange={(e) => {
-                        setAge(e.target.value);
+                        updateObjData("age")(e.target.value);
                     }}
                 />
 
                 <input
                     placeholder='Details'
-                    value={details}
+                    value={objData.details}
                     onChange={(e) => {
-                        setDetails(e.target.value);
+                        updateObjData("details")(e.target.value);
                     }}
                 />
 
                 <input
                     placeholder='D.O.B'
                     type="date"
-                    value={dob}
+                    value={objData.dob}
                     onChange={(e) => {
-                        setDob(e.target.value);
+                        updateObjData("dob")(e.target.value);
                     }}
                 />
 
@@ -64,10 +73,10 @@ const Question7 = () => {
             </form>
             <br />
             <YourDetails
-                name={name}
-                age={age}
-                details={details}
-                dob={dob}
+                name={objData.name}
+                age={objData.age}
+                details={objData.details}
+                dob={objData.dob}
             />
         </div>
     )

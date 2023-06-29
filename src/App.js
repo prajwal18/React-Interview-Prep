@@ -9,6 +9,11 @@ import Question4 from './Components/Question4';
 import Question5 from './Components/Question5';
 import Question6 from './Components/Question6';
 import Question7 from './Components/Question7';
+import Question8 from './Components/Question8';
+import Question9 from './Components/Question9';
+import Question10 from './Components/Question10';
+import Question11 from './Components/Question11';
+import Question12 from './Components/Question12';
 // Components
 
 function App() {
@@ -44,6 +49,26 @@ function App() {
     "Question7": {
       path: "/question/7",
       component: <Question7 />
+    },
+    "Question8": {
+      path: "/question/8",
+      component: <Question8 />
+    },
+    "Question9": {
+      path: "/question/9",
+      component: <Question9 />
+    },
+    "Question10": {
+      path: "/question/10",
+      component: <Question10 />
+    },
+    "Question11": {
+      path: "/question/11",
+      component: <Question11 />
+    },
+    "Question12": {
+      path: "/question/12",
+      component: <Question12 />
     },
   }
 
