@@ -14,6 +14,16 @@ import Question9 from './Components/Question9';
 import Question10 from './Components/Question10';
 import Question11 from './Components/Question11';
 import Question12 from './Components/Question12';
+import Question13 from './Components/Question13';
+import Question14 from './Components/Question14';
+import Question15 from './Components/Question15';
+import Question16 from './Components/Question16';
+import Question17 from './Components/Question17';
+import Question18 from './Components/Question18';
+import Question19 from './Components/Question19';
+import Question20 from './Components/Question20';
+import Question21 from './Components/Question21';
+import Question22 from './Components/Question22';
 // Components
 
 function App() {
@@ -70,27 +80,72 @@ function App() {
       path: "/question/12",
       component: <Question12 />
     },
+    "Question13": {
+      path: "/question/13",
+      component: <Question13 />
+    },
+    "Question14": {
+      path: "/question/14",
+      component: <Question14 />
+    },
+    "Question15": {
+      path: "/question/15",
+      component: <Question15 />
+    },
+    "Question16": {
+      path: "/question/16",
+      component: <Question16 />
+    },
+    "Question17": {
+      path: "/question/17",
+      component: <Question17 />
+    },
+    "Question18": {
+      path: "/question/18",
+      component: <Question18 />
+    },
+    "Question19": {
+      path: "/question/19",
+      component: <Question19 />
+    },
+    "Question20": {
+      path: "/question/20",
+      component: <Question20 />
+    },
+    "Question21": {
+      path: "/question/21",
+      component: <Question21 />
+    },
+    "Question22": {
+      path: "/question/22",
+      component: <Question22 />
+    },
   }
 
   return (
     <div>
-      <h1>Navigate to a specific page</h1>
-      <div>
-        {
-          Object.keys(myLinks).map((key, idx) => {
-            return (
-              <div key={idx}>
-                <Link to={myLinks[key].path}>
-                  {key}
-                </Link>
-              </div>
-            )
-          })
-        }
-      </div>
-      <hr />
 
       <Routes>
+        <Route path='/' element={
+          <>
+            <h1>Navigate to a specific page</h1>
+            <div>
+              {
+                Object.keys(myLinks).map((key, idx) => {
+                  return (
+                    <div key={idx}>
+                      <Link to={myLinks[key].path}>
+                        {key}
+                      </Link>
+                    </div>
+                  )
+                })
+              }
+            </div>
+            <hr />
+          </>
+        } />
+
         {
           Object.keys(myLinks).map((key, idx) => (
             <Route key={idx} path={myLinks[key].path} element={myLinks[key].component} />
